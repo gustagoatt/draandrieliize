@@ -83,7 +83,7 @@ p{margin:0}
 .rodape-slide{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px;padding:0 6px}
 .rodape-slide p{font-size:15px;color:rgba(248,242,236,.8)}
 .rodape-slide p b{font:400 18px var(--serif);color:var(--ouro2);font-weight:400}
-.dica{font-size:13px;color:rgba(248,242,236,.5)}
+.dica{display:block;font-size:13px;color:rgba(248,242,236,.5);margin-top:2px}
 .pontos{display:flex;gap:8px}
 .pontos button{width:9px;height:9px;padding:0;border-radius:50%;border:1px solid var(--ouro);background:transparent;cursor:pointer;transition:.3s}
 .pontos button.on{background:var(--ouro);width:24px;border-radius:5px}
@@ -124,7 +124,7 @@ p{margin:0}
 /* a dra. */
 .dra .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,7vw,110px);align-items:center}
 .retrato{position:relative;max-width:420px;width:100%;justify-self:center}
-.retrato img{width:100%;height:auto;aspect-ratio:510/655;object-fit:cover;border-radius:999px 999px 20px 20px;box-shadow:0 40px 80px -40px rgba(42,28,22,.6)}
+.retrato img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:45% 30%;border-radius:999px 999px 20px 20px;box-shadow:0 40px 80px -40px rgba(42,28,22,.6)}
 .retrato::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(168,118,80,.45);border-radius:999px 999px 28px 28px;pointer-events:none}
 .creds{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
 .creds span{background:#fff;border:1px solid rgba(168,118,80,.3);border-radius:999px;padding:8px 16px;font-size:15px}
@@ -159,13 +159,10 @@ p{margin:0}
 .final{position:relative;overflow:hidden;background:radial-gradient(90% 120% at 50% 100%,var(--cacau2),var(--esp) 70%)}
 .final .mono{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font:400 clamp(280px,40vw,540px)/1 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(201,162,107,.15);pointer-events:none}
 .final .wrap{position:relative}
-.final .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,90px);align-items:center}
-.foto-final{position:relative;max-width:480px;width:100%;justify-self:center}
-.foto-final img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:28px}
-.foto-final::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--linha);border-radius:28px;z-index:0}
-.final h2{font-size:clamp(36px,4.4vw,58px);max-width:16ch;margin-bottom:22px}
-.final .lead{margin-bottom:36px}
-.endereco{margin-top:44px;display:flex;flex-direction:column;gap:8px;font-size:15px;color:rgba(248,242,236,.72)}
+.final h2{font-size:clamp(38px,5vw,64px);max-width:19ch;margin:0 auto 22px}
+.final .lead{margin-bottom:38px}
+.final .acoes{justify-content:center}
+.endereco{margin-top:52px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 36px;font-size:15px;color:rgba(248,242,236,.72)}
 .endereco a{color:var(--ouro2)}
 
 footer{background:var(--esp);color:rgba(248,242,236,.6);font-size:14px;border-top:1px solid rgba(201,162,107,.15)}
@@ -184,7 +181,7 @@ footer a{color:var(--ouro2);text-decoration:none}
   .menu.aberto{transform:none}
   .hamb{display:block}
   .topo .btn{display:none}
-  .hero .wrap,.gluteo .wrap,.dra .wrap,.aval .wrap,.duplo .wrap,.final .wrap{grid-template-columns:1fr}
+  .hero .wrap,.gluteo .wrap,.dra .wrap,.aval .wrap,.duplo .wrap{grid-template-columns:1fr}
   .hero{padding-top:118px}
   .palco{width:min(88%,420px);margin:10px auto 0}
   .selo{left:-30px;width:120px;height:120px}
@@ -192,7 +189,6 @@ footer a{color:var(--ouro2);text-decoration:none}
   .lista a{grid-template-columns:1fr auto}
   .lista a p{grid-column:1/-1;grid-row:2}
   .retrato{max-width:330px}
-  .foto-final{max-width:360px}
 }
 @media (max-width:600px){
   body{font-size:16px}
@@ -253,10 +249,10 @@ footer a{color:var(--ouro2);text-decoration:none}
       </div>
       <div class="selo" aria-hidden="true">
         <svg viewBox="0 0 150 150"><defs><path id="circ" d="M75,75 m-60,0 a60,60 0 1,1 120,0 a60,60 0 1,1 -120,0"/></defs><text><textPath href="#circ">DRA. BUMBUM • SEM PMMA • ANDRIELI IZE •</textPath></text></svg>
-        <img src="img/dra-selo.webp" alt="" width="280" height="280">
+        <img src="img/dra-selo.webp" alt="" width="300" height="300">
       </div>
       <div class="rodape-slide">
-        <p>Caso real · <b id="nomeCaso">Perfil</b> <span class="dica">· deslize para ver mais</span></p>
+        <p>Caso real · <b id="nomeCaso">Perfil</b><span class="dica">Deslize para ver mais</span></p>
         <div class="pontos" id="pontos" aria-label="Trocar caso"></div>
       </div>
     </div>
@@ -298,7 +294,7 @@ footer a{color:var(--ouro2);text-decoration:none}
 
 <section class="band dra" id="dra">
   <div class="wrap">
-    <div class="retrato rv"><img src="img/dra-andrieli-ize.webp" alt="Dra. Andrieli Ize" width="510" height="655" loading="lazy"></div>
+    <div class="retrato rv"><img src="img/dra-andrieli-ize.webp" alt="Dra. Andrieli Ize" width="720" height="895" loading="lazy"></div>
     <div class="rv">
       <div class="pre">A Dra.</div>
       <h2>Andrieli Ize</h2>
@@ -356,11 +352,9 @@ footer a{color:var(--ouro2);text-decoration:none}
   </div>
 </section>
 
-<section class="band noite final" id="contato">
+<section class="band noite final centro" id="contato">
   <span class="mono" aria-hidden="true">A</span>
-  <div class="wrap">
-    <div class="foto-final rv"><img src="img/dra-andrieli-editorial.webp" alt="Dra. Andrieli Ize segurando seringas de preenchimento" width="900" height="891" loading="lazy"></div>
-    <div class="rv">
+  <div class="wrap rv">
     <div class="pre">Agende sua avaliação</div>
     <h2>A sua melhor versão começa com uma <span class="g">avaliação.</span></h2>
     <p class="lead">Chame no WhatsApp, conte o que você deseja e a equipe encontra o melhor horário para você.</p>
@@ -372,7 +366,6 @@ footer a{color:var(--ouro2);text-decoration:none}
       <span>Clínica Renove · R. Maringá, 920 – Jardim Riva, Primavera do Leste – MT</span>
       <span>(66) 99247-8972</span>
       <a href="https://maps.google.com/?cid=10707666364648981196" target="_blank" rel="noopener">Como chegar ↗</a>
-    </div>
     </div>
   </div>
 </section>
